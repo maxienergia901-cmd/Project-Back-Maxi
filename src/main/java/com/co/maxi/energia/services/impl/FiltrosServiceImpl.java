@@ -11,14 +11,12 @@ import org.springframework.stereotype.Service;
 public class FiltrosServiceImpl implements FiltrosService {
     private final CategoriaService categoriaService;
     private final PresentacionService presentacionService;
-    private final ColoresService coloresService;
 
     @Override
     public ResponseEntity<Forms> obtenerPorProducto(final Long producto) {
         Forms filtros = new Forms();
         filtros.setCategorias(categoriaService.obtenerPorProducto(producto));
         filtros.setPresentacion(presentacionService.obtenerPorProducto(producto));
-        /*filtros.setColores(coloresService.obtenerPorProducto(producto));*/
 
         if (filtros.getCategorias().isEmpty() ||
                 filtros.getPresentacion().isEmpty()) {
