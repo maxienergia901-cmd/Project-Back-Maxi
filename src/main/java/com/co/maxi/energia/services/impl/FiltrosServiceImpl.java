@@ -18,10 +18,9 @@ public class FiltrosServiceImpl implements FiltrosService {
         Forms filtros = new Forms();
         filtros.setCategorias(categoriaService.obtenerPorProducto(producto));
         filtros.setPresentacion(presentacionService.obtenerPorProducto(producto));
-        filtros.setColores(coloresService.obtenerPorProducto(producto));
+        /*filtros.setColores(coloresService.obtenerPorProducto(producto));*/
 
         if (filtros.getCategorias().isEmpty() ||
-                filtros.getColores().isEmpty() ||
                 filtros.getPresentacion().isEmpty()) {
             return ResponseEntity.notFound().build();
         }
