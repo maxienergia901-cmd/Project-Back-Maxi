@@ -18,10 +18,10 @@ public class FiltrosServiceImpl implements FiltrosService {
         filtros.setCategorias(categoriaService.obtenerPorProducto(producto));
         filtros.setPresentacion(presentacionService.obtenerPorProducto(producto));
 
-        if (filtros.getCategorias().isEmpty() ||
+        /*if (filtros.getCategorias().isEmpty() ||
                 filtros.getPresentacion().isEmpty()) {
             return ResponseEntity.notFound().build();
-        }
+        }*/
 
         return ResponseEntity.ok(filtros);
     }
